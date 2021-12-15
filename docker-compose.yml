@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+    php:
+        container_name: scandiweb_php
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www/html/
+
+    mysql:
+        container_name: scandiweb_mysql
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: scandiweb
+
+    phpmyadmin:
+        container_name: scandiweb_admin
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8081:80
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
