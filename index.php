@@ -11,8 +11,6 @@ $dbData = $db->getInstance();
 $products = new ProductRepository();
 $productData = $products->getProducts();
 
-var_dump($productData);
-
 ?>
 
     <div class="container">
@@ -30,11 +28,11 @@ var_dump($productData);
                     <label class="form-check-label" for="delete"></label>
                 </div>
                 <div class="card-body text-center">
-                    <h4 class="card-title">SKU: <?= $product['sku'] ?> </h4>
-                    <h5 class="card-title">Name: <?= $product['name']?> </h5>
-                    <p class="card-text">Price: <?= $product['price'] ?> &euro;</p>
-                    <p class="card-text">Type: <?= $product['type'] ?> </p>
-                    <p class="card-text">Size: <?= $product['size'] ?> </p>
+                    <h4 class="card-title">SKU: <?= $product->getSku() ?> </h4>
+                    <h5 class="card-title">Name: <?= $product->getName() ?> </h5>
+                    <p class="card-text">Price: <?= $product->getPrice() ?> &euro;</p>
+                    <p class="card-text">Type: <?= $product->getType() ?> </p>
+                    <p class="card-text">Size: <?= $product->getSize() ?> </p>
                 </div>
             </div>
             <?php  } ?>

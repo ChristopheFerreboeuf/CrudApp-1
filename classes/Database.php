@@ -4,8 +4,7 @@ class Database
 {
 
     private $_mysqli,
-            $_query
-            /*$_results = array()*/;
+            $_query;
 
     public static $instance;
 
@@ -37,9 +36,4 @@ class Database
         }
         return $results;
     }
-
-    /*public function results(): array
-    {
-        return $this->results;
-    }*/
 }

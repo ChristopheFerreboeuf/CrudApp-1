@@ -4,19 +4,20 @@ class ProductRepository
 {
     public function getConnection()
     {
-        $connection = new Database('mysql', 'root', 'password', 'scandiweb');
+        /*$connection = new Database('mysql', 'root', 'password', 'scandiweb');*/
 
-        return $connection->getInstance();
+        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+
+        return $connection;
     }
 
     public function getProducts()
     {
         $query = "SELECT * FROM product";
         $stmt = $this->getConnection()->query($query);
-        /*$stmt->execute();*/
 
         $products = [];
-        while ($row = $stmt/*->fetchArray()*/) {
+        while ($row = $stmt->fetch_array()) {
             $products[] = new Product(
                 $row['sku'],
                 $row['name'],
