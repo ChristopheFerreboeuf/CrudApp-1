@@ -10,7 +10,6 @@ $dbData = $db->getInstance();
 
 $products = new ProductRepository();
 $productData = $products->getProducts();
-
 ?>
 
     <div class="container">
