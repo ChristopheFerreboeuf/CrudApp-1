@@ -14,12 +14,15 @@ $types = $typeData->getTypes();
 ?>
 
 <div class="container">
-    <h1>Add product</h1>
     <form action="index.php" method="POST" id="product_form">
-        <div class="mb-3 d-flex justify-content-end">
-            <button type="submit" name="save" class="btn btn-white border mx-2">Save</button>
-            <a href="index.php" class="btn btn-white border">Cancel</a>
+        <div class="top mt-4">
+            <h1 class="position-absolute">Add product</h1>
+            <div class="mb-3 d-flex justify-content-end position-relative">
+                <button type="submit" name="save" class="btn btn-white border mx-2">Save</button>
+                <a href="index.php" class="btn btn-white border">Cancel</a>
+            </div>
         </div>
+        <hr class="mb-5">
         <div class="mb-3">
             <label for="sku" class="form-label">SKU</label>
             <input id="sku" type="text" name="sku" value="" class="form-control" required>
@@ -51,5 +54,6 @@ $types = $typeData->getTypes();
             <label for="length" class="form-label">length (HxWxl)</label>
             <input id="length" type="number" name="length" class="form-control" required>
         </div>
+        <hr class="mt-5">
     </form>
 </div>
