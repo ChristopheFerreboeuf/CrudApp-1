@@ -5,10 +5,11 @@ require_once('classes/Product.php');
 include 'includes/init.php';
 include 'includes/header.php';
 
-$product = new ProductRepository();
+/*$productData = new ProductRepository();
+$products = $productData->getProducts();*/
 
-$types = new TypeRepository();
-$typeData = $types->getTypes();
+$typeData = new TypeRepository();
+$types = $typeData->getTypes();
 
 ?>
 
@@ -34,7 +35,7 @@ $typeData = $types->getTypes();
         <div class="mb-3">
             <select id="productType" class="form-select" aria-label="selection">
                 <?php foreach ($types as $type) { ?>
-                    <option><?= $type->getType() ?></option>
+                    <option><?= $type->getName() ?></option>
                 <?php } ?>
             </select>
         </div>

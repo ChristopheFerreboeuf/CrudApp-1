@@ -1,7 +1,10 @@
 <?php
 
-class Type extends Product
+class Type
 {
+    /**
+     * @var int
+     */
     private $id;
 
     /**
@@ -10,13 +13,35 @@ class Type extends Product
     private $type;
 
     /**
+     * @var string
+     */
+    private $name;
+
+    /**
      * @param string $name
      * @param int $type
      */
     public function __construct($id, $name, $type = 1)
     {
-        parent::__construct($id, $name);
+        $this->id = $id;
+        $this->name = $name;
         $this->type = $type;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -25,6 +50,17 @@ class Type extends Product
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
