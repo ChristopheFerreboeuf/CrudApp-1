@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Dec 01, 2021 at 09:38 AM
+-- Generation Time: Dec 16, 2021 at 06:43 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -41,7 +41,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `sku`, `name`, `price`, `size`, `type_id`) VALUES
-(3, 'afawf440-srs8s883', 'Best band', '10', 500, 1);
+(3, 'afawf440-srs8s883', 'Best band', '10', 500, 1),
+(4, 'v7srvh-sr87h4', 'Best book', '30', 2, 2),
+(5, 'uy67-b876', 'Best Furniture', '501', 50, 5);
 
 -- --------------------------------------------------------
 
@@ -59,7 +61,9 @@ CREATE TABLE `type` (
 --
 
 INSERT INTO `type` (`id`, `name`) VALUES
-(1, 'CD');
+(1, 'CD'),
+(2, 'Book'),
+(5, 'Furniture');
 
 --
 -- Indexes for dumped tables
@@ -86,13 +90,13 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
