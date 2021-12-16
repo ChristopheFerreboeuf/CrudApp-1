@@ -8,8 +8,8 @@ include 'includes/header.php';
 $db = new Database('mysql', 'root', 'password', 'scandiweb');
 $dbData = $db->getInstance();
 
-$products = new ProductRepository();
-$allProducts = $products->getProducts();
+$productData = new ProductRepository();
+$products = $productData->getProducts();
 /*$product_id = $products->getProduct('');
 var_dump($product_id);*/
 ?>
@@ -22,7 +22,7 @@ var_dump($product_id);*/
         </div>
         <div class="row p-3">
             <?php
-            foreach ($allProducts as $product) { ?>
+            foreach ($products as $product) { ?>
             <div class="card col-3 p-3 m-auto">
                 <div class="form-check">
                     <label class="form-check-label" for="delete"></label>

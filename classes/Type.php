@@ -2,6 +2,8 @@
 
 class Type extends Product
 {
+    private $id;
+
     /**
      * @var int
      */
@@ -11,9 +13,9 @@ class Type extends Product
      * @param string $name
      * @param int $type
      */
-    public function __construct($name, $type = 1)
+    public function __construct($id, $name, $type = 1)
     {
-        parent::__construct($name);
+        parent::__construct($id, $name);
         $this->type = $type;
     }
 

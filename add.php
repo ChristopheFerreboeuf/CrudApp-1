@@ -6,7 +6,9 @@ include 'includes/init.php';
 include 'includes/header.php';
 
 $product = new ProductRepository();
+
 $types = new TypeRepository();
+$typeData = $types->getTypes();
 
 ?>
 
@@ -19,21 +21,21 @@ $types = new TypeRepository();
         </div>
         <div class="mb-3">
             <label for="sku" class="form-label">SKU</label>
-            <input id="sku" type="text" name="sku" value="<?/*= $product['sku'] */?>" class="form-control" required>
+            <input id="sku" type="text" name="sku" value="" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input id="name" type="text" name="name" value="<?/*= $product['name'] */?>" class="form-control" required>
+            <input id="name" type="text" name="name" value="" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price $</label>
-            <input id="price" type="number" name="price" value="<?/*= $product['price'] */?>" class="form-control" required>
+            <input id="price" type="number" name="price" value="" class="form-control" required>
         </div>
         <div class="mb-3">
             <select id="productType" class="form-select" aria-label="selection">
-                <?php /*foreach ($types as $type) { */?>
-                    <option>1</option>
-                <?php /*} */?>
+                <?php foreach ($types as $type) { ?>
+                    <option><?= $type->getType() ?></option>
+                <?php } ?>
             </select>
         </div>
         <div class="mb-3">

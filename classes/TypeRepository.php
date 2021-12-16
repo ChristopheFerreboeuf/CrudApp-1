@@ -4,9 +4,9 @@ class TypeRepository
 {
     public function getConnection()
     {
-        $connection = new Database('mysql', 'root', 'password', 'scandiweb');
+        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
 
-        return $connection->getInstance();
+        return $connection;
     }
 
     public function getTypes()
@@ -15,7 +15,7 @@ class TypeRepository
 
         $types = [];
 
-        while ($row = $stmt->fetchArray()) {
+        while ($row = $stmt->fetch_array()) {
             $types[] = new Type(
                 $row['id'],
                 $row['name']
