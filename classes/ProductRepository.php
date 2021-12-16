@@ -14,11 +14,12 @@ class ProductRepository
     public function getProducts()
     {
         $query = "SELECT * FROM product";
-        $stmt = $this->getConnection()->query($query);
+        $result = $this->getConnection()->query($query);
 
         $products = [];
-        while ($row = $stmt->fetch_array()) {
+        while ($row = $result->fetch_array()) {
             $products[] = new Product(
+                $row['id'],
                 $row['sku'],
                 $row['name'],
                 $row['price'],
@@ -37,5 +38,15 @@ class ProductRepository
         // get one product corresponding to $id
 
         return $stmt;
+    }
+
+    public function delete($id, $table)
+    {
+        $query = "DELETE FROM product WHERE IDENTITY = ?";
+        $result = $this->getConnection()->query($query);
+
+        var_dump($result);
+
+        return $result;
     }
 }

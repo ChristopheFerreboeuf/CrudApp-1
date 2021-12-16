@@ -3,6 +3,11 @@
 class Product
 {
     /**
+     * @var int
+     */
+    private $id;
+
+    /**
      * @var string
      */
     private $sku;
@@ -34,13 +39,29 @@ class Product
      * @param string $type
      * @param int $size
      */
-    public function __construct($sku, $name, $price, $type, $size)
+    public function __construct($id, $sku, $name, $price, $type, $size)
     {
+        $this->id = $id;
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;
         $this->type = $type;
         $this->size = $size;
+    }
+
+    public function getConnection()
+    {
+        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+
+        return $connection;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
