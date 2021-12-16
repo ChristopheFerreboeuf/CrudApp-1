@@ -33,16 +33,17 @@ class ProductRepository
 
     public function getProduct($id)
     {
-        $stmt = $this->getConnection()->query('SELECT id FROM product WHERE id = ?');
+        $query = "SELECT id FROM product WHERE id = ?";
+        $stmt = $this->getConnection()->query($query);
 
         // get one product corresponding to $id
 
         return $stmt;
     }
 
-    public function delete($id, $table)
+    public function delete($id, $row)
     {
-        $query = "DELETE FROM product WHERE IDENTITY = ?";
+        $query = "DELETE FROM product WHERE id = ?";
         $result = $this->getConnection()->query($query);
 
         var_dump($result);
