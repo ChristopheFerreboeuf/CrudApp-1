@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
     php:
-        container_name: scandiweb_php
+        container_name: crud_php
         build:
             context: .
             dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
             - ./:/var/www/html/
 
     mysql:
-        container_name: scandiweb_mysql
+        container_name: crud_mysql
         image: mysql
         restart: always
         environment:
@@ -20,7 +20,7 @@ services:
             MYSQL_DATABASE: scandiweb
 
     phpmyadmin:
-        container_name: scandiweb_admin
+        container_name: crud_admin
         image: phpmyadmin
         restart: always
         ports:
