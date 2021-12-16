@@ -8,8 +8,12 @@ include 'includes/header.php';
 $db = new Database('mysql', 'root', 'password', 'scandiweb');
 $dbData = $db->getInstance();
 
+$typeData = new TypeRepository();
+$types = $typeData->getTypes();
+
 $productData = new ProductRepository();
 $products = $productData->getProducts();
+
 /*$product_id = $products->getProduct('');
 var_dump($product_id);*/
 ?>
@@ -23,7 +27,7 @@ var_dump($product_id);*/
         <div class="row p-3">
             <?php
             foreach ($products as $product) { ?>
-            <div class="card col-3 p-3 m-auto">
+            <div class="card col-2 p-2 mx-4 mt-4">
                 <div class="form-check">
                     <label class="form-check-label" for="delete"></label>
                     <input class="form-check-input delete-checkbox" type="checkbox" value="<?= $product->getId() ?>">
