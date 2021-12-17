@@ -32,13 +32,6 @@ class Product
      */
     private $size;
 
-    /**
-     * @param string $sku
-     * @param string $name
-     * @param int $price
-     * @param string $type
-     * @param int $size
-     */
     public function __construct($id, $sku, $name, $price, $type, $size)
     {
         $this->id = $id;

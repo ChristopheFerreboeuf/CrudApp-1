@@ -1,15 +1,12 @@
 <?php
-require_once('classes/Database.php');
-require_once('classes/Product.php');
+require_once('model/Database.php');
+require_once('model/Product.php');
 
 include 'includes/init.php';
 include 'includes/header.php';
 
-$db = new Database('mysql', 'root', 'password', 'scandiweb');
-$dbData = $db->getInstance();
-
-$typeData = new TypeRepository();
-$types = $typeData->getTypes();
+/*$typeData = new TypeRepository();
+$types = $typeData->getTypes();*/
 
 $productData = new ProductRepository();
 $products = $productData->getProducts();

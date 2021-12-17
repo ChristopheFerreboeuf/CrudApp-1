@@ -1,6 +1,6 @@
 <?php
-require_once('classes/Database.php');
-require_once('classes/Product.php');
+require_once('model/Database.php');
+require_once('model/Product.php');
 
 include 'includes/init.php';
 include 'includes/header.php';
@@ -57,3 +57,5 @@ $types = $typeData->getTypes();
         <hr class="mt-5">
     </form>
 </div>
+
+<?php include 'includes/footer.php'; ?>

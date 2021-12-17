@@ -8,24 +8,14 @@ class Type
     private $id;
 
     /**
-     * @var int
-     */
-    private $type;
-
-    /**
      * @var string
      */
     private $name;
 
-    /**
-     * @param string $name
-     * @param int $type
-     */
-    public function __construct($id, $name, $type = 1)
+    public function __construct($id, $name)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->type = $type;
     }
 
     /**
@@ -45,31 +35,12 @@ class Type
     }
 
     /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * @param $name
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param mixed $type
-     * @return type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
 
         return $this;
     }
