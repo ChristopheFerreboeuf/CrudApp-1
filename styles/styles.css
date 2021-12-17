@@ -1,3 +1,18 @@
-
+body {
+  /**
+      ========== Product list page
+   */
+  /**
+      ========== Product add page
+   */
+}
+body .container hr {
+  border: 2px solid #000000;
+  border-radius: 20px 20px;
+}
+body .container #product_form hr {
+  border: 2px solid #000000;
+  border-radius: 20px 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */
