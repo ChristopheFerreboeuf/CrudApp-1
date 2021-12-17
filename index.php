@@ -20,7 +20,7 @@ var_dump($product_id);*/
             <h1 class="position-absolute">Product list</h1>
             <div class="d-flex justify-content-end position-relative">
                 <a href="add.php" class="btn btn-white border mx-2">Add</a>
-                <a href="#" class="btn btn-white border" id="delete-product-btn">Mass delete</a>
+                <a href="" class="btn btn-white border" id="delete-product-btn">Mass delete</a>
             </div>
         </div>
         <hr>
