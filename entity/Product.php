@@ -49,51 +49,68 @@ class Product
         return $connection;
     }
 
-    /**
-     * @return int
-     */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getSku()
     {
         return $this->sku;
     }
 
-    /**
-     * @return string
-     */
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
+
+        return $this;
+    }
+
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @return int
-     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
     public function getPrice()
     {
         return $this->price;
     }
 
-    /**
-     * @return string
-     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
     public function getType()
     {
         return $this->type;
     }
 
-    /**
-     * @return int
-     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
     public function getSize()
     {
         return $this->size;
+    }
+
+    public function setSize($size)
+    {
+        $this->size = $size;
+
+        return $this;
     }
 }
