@@ -1,6 +1,6 @@
 <?php
-require_once('model/Database.php');
-require_once('model/Product.php');
+require_once('entity/Database.php');
+require_once('entity/Product.php');
 
 include 'includes/init.php';
 include 'includes/header.php';

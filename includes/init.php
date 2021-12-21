@@ -2,8 +2,8 @@
 ini_set('display_errors', E_ALL);
 
 session_start();
-spl_autoload_register(function ($model) {
-    include $_SERVER['DOCUMENT_ROOT'].'/model/'.$model . '.php';
+spl_autoload_register(function ($entity) {
+    include $_SERVER['DOCUMENT_ROOT'].'/entity/'.$entity . '.php';
 });
 
 spl_autoload_register(function ($controller) {
