@@ -39,6 +39,8 @@ var_dump($product_id);*/
                             <p class="card-text">Price: <?= $product->getPrice() ?> &euro;</p>
                             <p class="card-text">Type: <?= $product->getType() ?> </p>
                             <p class="card-text">Size: <?= $product->getSize() ?> </p>
+                            <p class="card-text">Weight: <?= $product->getWeight() ?> </p>
+                            <p class="card-text">Length: <?= $product->getLength() ?> </p>
                         </div>
                     </div>
                 </div>

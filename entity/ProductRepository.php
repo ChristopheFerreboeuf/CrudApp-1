@@ -24,7 +24,9 @@ class ProductRepository
                 $row['name'],
                 $row['price'],
                 $row['type_id'],
-                $row['size']
+                $row['size'],
+                $row['weight'],
+                $row['length']
             );
         }
 
@@ -42,7 +44,9 @@ class ProductRepository
             $result['name'],
             $result['price'],
             $result['type_id'],
-            $result['size']
+            $result['size'],
+            $result['weight'],
+            $result['length']
         );
 
         return $product;

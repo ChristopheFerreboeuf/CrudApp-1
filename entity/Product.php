@@ -32,7 +32,17 @@ class Product
      */
     private $size;
 
-    public function __construct($id, $sku, $name, $price, $type, $size)
+    /**
+     * @var int
+     */
+    private $weight;
+
+    /**
+     * @var string
+     */
+    private $length;
+
+    public function __construct($id, $sku, $name, $price, $type, $size, $weight, $length)
     {
         $this->id = $id;
         $this->sku = $sku;
@@ -40,6 +50,8 @@ class Product
         $this->price = $price;
         $this->type = $type;
         $this->size = $size;
+        $this->weight = $weight;
+        $this->length = $length;
     }
 
     public function getConnection()
@@ -110,6 +122,30 @@ class Product
     public function setSize($size)
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    public function setLength($length)
+    {
+        $this->length = $length;
 
         return $this;
     }
