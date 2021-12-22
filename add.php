@@ -1,5 +1,8 @@
 <?php
 
+use Controller\FormController;
+use Repository\TypeRepository;
+
 include 'includes/init.php';
 include 'includes/header.php';
 

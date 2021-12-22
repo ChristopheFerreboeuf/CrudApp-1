@@ -1,5 +1,7 @@
 <?php
 
+namespace Entity;
+
 class Product
 {
     /**
@@ -56,7 +58,7 @@ class Product
 
     public function getConnection()
     {
-        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+        $connection = new \mysqli('mysql', 'root', 'password', 'scandiweb');
 
         return $connection;
     }

@@ -1,5 +1,9 @@
 <?php
 
+namespace Repository;
+
+use Entity\Type;
+
 class TypeRepository
 {
     public function getConnection()
