@@ -1,10 +1,14 @@
 <?php
 
+namespace Repository;
+
+use Entity\Type;
+
 class TypeRepository
 {
     public function getConnection()
     {
-        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+        $connection = new \mysqli('mysql', 'root', 'password', 'scandiweb');
 
         return $connection;
     }

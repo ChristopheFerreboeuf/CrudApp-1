@@ -1,12 +1,16 @@
 <?php
 
+namespace Repository;
+
+use Entity\Product;
+
 class ProductRepository
 {
     public function getConnection()
     {
         /*$connection = new Database('mysql', 'root', 'password', 'scandiweb');*/
 
-        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+        $connection = new \mysqli('mysql', 'root', 'password', 'scandiweb');
 
         return $connection;
     }
@@ -56,8 +60,6 @@ class ProductRepository
     {
         $query = "DELETE FROM product WHERE id = ?";
         $result = $this->getConnection()->query($query);
-
-        var_dump($result);
 
         return $result;
     }

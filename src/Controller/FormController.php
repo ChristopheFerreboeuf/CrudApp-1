@@ -1,10 +1,12 @@
 <?php
 
+namespace Controller;
+
 class FormController
 {
     public function getConnection()
     {
-        $connection = new mysqli('mysql', 'root', 'password', 'scandiweb');
+        $connection = new \mysqli('mysql', 'root', 'password', 'scandiweb');
 
         return $connection;
     }
@@ -26,8 +28,8 @@ class FormController
         $data['length'] = $POST['length'];
         /*$data['date'] = date("Y-m-d H:i:s");*/
 
-        $result = $DB->write($query,$data);
-        if(!$result){
+        $result = $DB->write($query, $data);
+        if (!$result) {
             $this->errors[] = "Your data could not be saved";
         }
 

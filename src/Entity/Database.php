@@ -1,10 +1,12 @@
 <?php
 
+namespace Entity;
+
 class Database
 {
 
     private $_mysqli,
-            $_query;
+        $_query;
 
     public static $instance;
 
@@ -18,7 +20,7 @@ class Database
 
     public function __construct($host, $user, $password, $db)
     {
-        $this->_mysqli = new mysqli($host, $user, $password, $db);
+        $this->_mysqli = new \mysqli($host, $user, $password, $db);
 
         if ($this->_mysqli->connect_error) {
             die($this->_mysqli->connect_error);
