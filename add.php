@@ -14,14 +14,14 @@ $types = $typeData->getTypes();
     echo 'form submited!';
 }*/
 
-$submit = new FormController();
+/*$submit = new FormController();
 $errors = $submit->post($_POST);
 if (count($errors) == 0) {
     header('Location: index.php');
     die;
 }
 
-extract($_POST);
+extract($_POST);*/
 
 ?>
 

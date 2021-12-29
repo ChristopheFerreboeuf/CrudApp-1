@@ -61,8 +61,6 @@ class ProductRepository
         $query = "DELETE FROM product WHERE id = ?";
         $result = $this->getConnection()->query($query);
 
-        var_dump($result);
-
         return $result;
     }
 }
