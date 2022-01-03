@@ -56,7 +56,7 @@ class ProductRepository
         return $product;
     }
 
-    public function deleteProduct($id, $row)
+    public function deleteProduct()
     {
         $query = "DELETE FROM product WHERE id = ?";
         $result = $this->getConnection()->query($query);

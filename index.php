@@ -17,7 +17,7 @@ var_dump($product_id);*/
             <h1 class="position-absolute">Product list</h1>
             <div class="d-flex justify-content-end position-relative">
                 <a href="add.php" class="btn btn-white border mx-2">Add</a>
-                <a href="" class="btn btn-white border" id="delete-product-btn">Mass delete</a>
+                <button class="btn btn-white border" id="delete-product-btn">Mass delete</button>
             </div>
         </div>
         <hr>
@@ -28,7 +28,9 @@ var_dump($product_id);*/
                     <div class="card col-12 p-2 mt-2 mb-3">
                         <div class="form-check">
                             <label class="form-check-label" for="delete"></label>
-                            <input class="form-check-input delete-checkbox" type="checkbox" value="<?= $product->getId() ?>">
+                            <form action="" method="POST">
+                                <input class="form-check-input delete-checkbox" name="checkbox" type="checkbox" value="<?= $product->getId() ?>">
+                            </form>
                         </div>
                         <div class="card-body text-center">
                             <h4 class="card-title"> <?= $product->getSku() ?> </h4>

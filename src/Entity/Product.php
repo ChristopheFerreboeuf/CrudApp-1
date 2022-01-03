@@ -65,9 +65,10 @@ class Product
 
     public function addProduct()
     {
-        $query = "INSERT INTO product VALUES ('id', 'sku', 'name', 'price', 'type', 'size', 'weight', 'length')";
+        $query = "INSERT INTO product VALUES (id, sku, name, price, type, size, weight, length)";
+        $result = $this->getConnection()->query($query);
 
-        return $this->getConnection()->query($query);
+        return $result;
     }
 
     public function getId()
