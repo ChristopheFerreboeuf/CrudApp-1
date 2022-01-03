@@ -1,7 +1,7 @@
 <?php
 
-use Controller\FormController;
 use Repository\TypeRepository;
+use Entity\Product;
 
 include 'includes/init.php';
 include 'includes/header.php';
@@ -9,24 +9,12 @@ include 'includes/header.php';
 $typeData = new TypeRepository();
 $types = $typeData->getTypes();
 
-/*if (isset($_POST['submit'])) {
-    // validate entries
-    echo 'form submited!';
-}*/
-
-/*$submit = new FormController();
-$errors = $submit->post($_POST);
-if (count($errors) == 0) {
-    header('Location: index.php');
-    die;
-}
-
-extract($_POST);*/
+$product = new Product('id', 'sku', 'name', 'price', 'type', 'size', 'weight', 'length');
 
 ?>
 
 <div class="container">
-    <form action="<?php /*echo $_SERVER['PHP_SELF'] */?>" method="POST" id="product_form">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" id="product_form">
         <div class="top mt-4">
             <h1 class="position-absolute">Add product</h1>
             <div class="mb-3 d-flex justify-content-end position-relative">
@@ -37,15 +25,15 @@ extract($_POST);*/
         <hr class="mb-5">
         <div class="mb-3">
             <label for="sku" class="form-label">SKU</label>
-            <input id="sku" type="text" name="sku" value="sku" class="form-control" required>
+            <input id="sku" type="text" name="sku" value="<?= $product->getSku() ?>" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input id="name" type="text" name="name" value="name" class="form-control" required>
+            <input id="name" type="text" name="name" value="<?= $product->getName() ?>" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price $</label>
-            <input id="price" type="number" name="price" value="price" class="form-control" required>
+            <input id="price" type="number" name="price" value="<?= $product->getPrice() ?>" class="form-control" required>
         </div>
         <div class="mb-3">
             <select id="productType" class="form-select" aria-label="selection">
@@ -56,15 +44,15 @@ extract($_POST);*/
         </div>
         <div class="mb-3">
             <label for="size" class="form-label">Size (MB)</label>
-            <input id="size" type="number" name="size" value="size" class="form-control" required>
+            <input id="size" type="number" name="size" value="<?= $product->getSize() ?>" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="weight" class="form-label">Weight (Kg)</label>
-            <input id="weight" type="number" name="weight" value="weight" class="form-control" required>
+            <input id="weight" type="number" name="weight" value="<?= $product->getWeight() ?>" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="length" class="form-label">length (HxWxl)</label>
-            <input id="length" type="text" name="length" value="length" class="form-control" required>
+            <input id="length" type="text" name="length" value="<?= $product->getLength() ?>" class="form-control" required>
         </div>
         <hr class="mt-5">
     </form>

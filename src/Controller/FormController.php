@@ -2,6 +2,9 @@
 
 namespace Controller;
 
+use Entity\Product;
+use Repository\ProductRepository;
+
 class FormController
 {
     public function getConnection()
@@ -11,28 +14,36 @@ class FormController
         return $connection;
     }
 
-    private $errors = array();
-
-    public function post($POST)
+    public function submit()
     {
-        $query = "insert into product (sku,name,type_id,price,size,weight,length ) values (:sku,:name,:type_id,:price,:size,:weight,length)";
-        $DB = $this->getConnection($query);
+        $id = $_REQUEST['id'];
+        $sku = $_REQUEST['sku'];
+        $name = $_REQUEST['name'];
+        $price = $_REQUEST['price'];
+        $type = $_REQUEST['type'];
+        $size = $_REQUEST['size'];
+        $weight = $_REQUEST['weight'];
+        $length = $_REQUEST['length'];
 
-        $data = [];
-        $data['sku'] = $POST['sku'];
-        $data['name'] = $POST['name'];
-        $data['type_id'] = $POST['type_id'];
-        $data['price'] = $POST['price'];
-        $data['size'] = $POST['size'];
-        $data['weight'] = $POST['weight'];
-        $data['length'] = $POST['length'];
-        /*$data['date'] = date("Y-m-d H:i:s");*/
+        $product = new Product($id, $sku, $name, $price, $type, $size, $weight, $length);
 
-        $result = $DB->write($query, $data);
-        if (!$result) {
-            $this->errors[] = "Your data could not be saved";
+        if (isset($_POST['submit'])) {
+            $productType = $_POST['productType'];
+            if ($productType == 'CD') {
+                $product->setSku($_POST[$sku]);
+                $product->setName($_POST[$name]);
+                $product->setPrice($_POST[$price]);
+                $product->setType($_POST[$type]);
+                $product->setSize($_POST[$size]);
+                $product->setWeight($_POST[$weight]);
+                $product->setLength($_POST[$length]);
+            } else if ($productType == 'Book') {
+            } else if ($productType == 'Furniture') {
+            } else {
+                $message = 'There is no type for this product!';
+            }
         }
 
-        return $this->errors;
+        return $product;
     }
 }

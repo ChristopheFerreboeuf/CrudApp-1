@@ -63,6 +63,13 @@ class Product
         return $connection;
     }
 
+    public function addProduct()
+    {
+        $query = "INSERT INTO product VALUES ('id', 'sku', 'name', 'price', 'type', 'size', 'weight', 'length')";
+
+        return $this->getConnection()->query($query);
+    }
+
     public function getId()
     {
         return $this->id;
