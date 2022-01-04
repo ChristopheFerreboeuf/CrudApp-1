@@ -5,6 +5,10 @@ namespace Entity;
 class Database
 {
 
+    /**
+     * @todo this database class not working check why
+     */
+
     private $_mysqli,
         $_query;
 

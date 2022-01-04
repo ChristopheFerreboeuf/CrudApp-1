@@ -6,6 +6,10 @@ use Entity\Product;
 include 'includes/init.php';
 include 'includes/header.php';
 
+/**
+ * @todo find a way to submit this form with dynamic size, length, weight when changing the type in form
+ */
+
 $typeData = new TypeRepository();
 $types = $typeData->getTypes();
 

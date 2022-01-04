@@ -15,8 +15,13 @@ class FormController
         return $connection;
     }
 
+
     public function submit()
     {
+
+        /**
+         * @todo check if there is not better way to submit this
+         */
         $product = new Product(
             'id',
             'sku',
@@ -31,6 +36,9 @@ class FormController
         if (isset($_POST['submit']) && isset($_POST['productType'])) {
             $typeRepository = new TypeRepository();
             $productType = $typeRepository->getTypes();
+            /**
+             * @todo check if its not better to use while loop
+             */
             if ($productType == 'CD') {
                 $product->setSku($_POST['sku']);
                 $product->setName($_POST['name']);
@@ -51,6 +59,9 @@ class FormController
 
     public function delete()
     {
+        /**
+         * @todo this does not work find away to make it work
+         */
         if (isset($_POST['checkbox'])) {
             $repository = new ProductRepository();
             $query = $repository->deleteProduct();

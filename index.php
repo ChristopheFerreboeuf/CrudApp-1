@@ -17,6 +17,7 @@ var_dump($product_id);*/
             <h1 class="position-absolute">Product list</h1>
             <div class="d-flex justify-content-end position-relative">
                 <a href="add.php" class="btn btn-white border mx-2">Add</a>
+                <?php /** @todo find a way to delete product when checkbox is checked */ ?>
                 <button class="btn btn-white border" id="delete-product-btn">Mass delete</button>
             </div>
         </div>
@@ -32,6 +33,7 @@ var_dump($product_id);*/
                                 <input class="form-check-input delete-checkbox" name="checkbox" type="checkbox" value="<?= $product->getId() ?>">
                             </form>
                         </div>
+                        <?php /** @todo size, wight, length should show only if there is something */ ?>
                         <div class="card-body text-center">
                             <h4 class="card-title"> <?= $product->getSku() ?> </h4>
                             <h5 class="card-title"> <?= $product->getName() ?> </h5>
