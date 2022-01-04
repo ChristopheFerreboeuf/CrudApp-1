@@ -37,7 +37,7 @@ class FormController
             $typeRepository = new TypeRepository();
             $productType = $typeRepository->getTypes();
             /**
-             * @todo check if its not better to use while loop
+             * @todo Avoid using conditional statements for handling differences in product types
              */
             if ($productType == 'CD') {
                 $product->setSku($_POST['sku']);
