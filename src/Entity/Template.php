@@ -4,7 +4,7 @@ namespace Entity;
 
 use Exception;
 
-class View
+class Template
 {
     protected $template_dir = 'templates/';
 
