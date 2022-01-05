@@ -2,9 +2,18 @@
 
 namespace Controller;
 
+use Entity\Template;
+use Repository\ProductRepository;
+
 class TemplateController
 {
-    /**
-     * @todo create your controller for templates and include use Entity\Template;
-     */
+    /*public function base()
+    {
+        $productRepository = new ProductRepository();
+        $products = $productRepository->getProducts();
+
+        return $template = new Template('base.phtml', [
+           'products' => $products
+        ]);
+    }*/
 }
